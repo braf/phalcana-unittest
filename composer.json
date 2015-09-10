@@ -16,7 +16,8 @@
         "issues": "https://github.com/braf/phalcana-unittest/issues"
     },
     "require": {
-        "phalcana/installer": "dev-master",
+        "phalcana/installer": "^0.8",
+        "phalcana/core": "^0.8",
         "phpunit/phpunit": "4.6.*"
     }
 }
