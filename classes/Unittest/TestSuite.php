@@ -16,7 +16,7 @@ class TestSuite extends \PHPUnit_Framework_TestSuite
      *
      * @var array
      */
-    protected $_filter_calls = array(
+    protected $filter_calls = array(
         'addFileToBlacklist' => array(),
         'addDirectoryToBlacklist' => array(),
         'addFileToWhitelist' => array());
@@ -47,7 +47,7 @@ class TestSuite extends \PHPUnit_Framework_TestSuite
             $coverage_filter = $coverage->filter();
 
             // Apply the white and blacklisting
-            foreach ($this->_filter_calls as $method => $args) {
+            foreach ($this->filter_calls as $method => $args) {
                 foreach ($args as $arg) {
                     $coverage_filter->$method($arg);
                 }
@@ -63,7 +63,7 @@ class TestSuite extends \PHPUnit_Framework_TestSuite
      */
     public function addFileToBlacklist($file)
     {
-        $this->_filter_calls['addFileToBlacklist'][] = $file;
+        $this->filter_calls['addFileToBlacklist'][] = $file;
     }
 
     /**
@@ -72,7 +72,7 @@ class TestSuite extends \PHPUnit_Framework_TestSuite
      */
     public function addDirectoryToBlacklist($dir)
     {
-        $this->_filter_calls['addDirectoryToBlacklist'][] = $dir;
+        $this->filter_calls['addDirectoryToBlacklist'][] = $dir;
     }
 
     /**
@@ -81,6 +81,6 @@ class TestSuite extends \PHPUnit_Framework_TestSuite
      */
     public function addFileToWhitelist($file)
     {
-        $this->_filter_calls['addFileToWhitelist'][] = $file;
+        $this->filter_calls['addFileToWhitelist'][] = $file;
     }
 }

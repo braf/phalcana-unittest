@@ -4,7 +4,6 @@ namespace Phalcana\Unittest;
 
 use Phalcana\Phalcana;
 
-
 class Tests
 {
 
@@ -30,10 +29,9 @@ class Tests
      **/
     public static function suite()
     {
-        static $suite = NULL;
+        static $suite = null;
 
-        if ($suite instanceof PHPUnit_Framework_TestSuite)
-        {
+        if ($suite instanceof PHPUnit_Framework_TestSuite) {
             return $suite;
         }
 
@@ -46,7 +44,7 @@ class Tests
 
         //if ($config->use_whitelist)
         //{
-        //  Unittest_Tests::whitelist(NULL, $suite);
+        //  Unittest_Tests::whitelist(null, $suite);
         //}
 
         //if (count($config['blacklist']))
@@ -77,9 +75,9 @@ class Tests
                 }
             } else {
                 // Make sure we only include php files
-                if (is_file($file) AND substr($file, -strlen('.php')) === '.php') {
+                if (is_file($file) && substr($file, -strlen('.php')) === '.php') {
                     // The default PHPUnit TestCase extension
-                    if ( ! strpos($file, 'TestCase'.'.php')) {
+                    if (!strpos($file, 'TestCase'.'.php')) {
                         $suite->addTestFile($file);
                     } else {
                         require_once($file);
